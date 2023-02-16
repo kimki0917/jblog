@@ -73,10 +73,10 @@ public class MvcConfig implements WebMvcConfigurer {
 		converters.add(mappingJackson2HttpMessageConverter());
 	}
 
+
+	// Default Servlet Handler
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry
-			.addResourceHandler("/assets/**")
-			.addResourceLocations("classpath:/assets/");
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
 	}
 }
